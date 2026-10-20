@@ -99,7 +99,7 @@ fun SettingsRootScreen(
     val appName = remember {
         runCatching {
             context.packageManager.getApplicationLabel(context.applicationInfo).toString()
-        }.getOrDefault("SleepDown课程表")
+        }.getOrDefault("Vv 课程表")
     }
 
     val updateAvailable by GiteeAppUpdater.updateAvailable.collectAsStateWithLifecycle()
@@ -225,31 +225,31 @@ fun SettingsRootScreen(
             }
         }
         item {
-            GlassPreferenceSection("应用", modifier = Modifier.homeSwitchGroup()) {
+            GlassPreferenceSection("主题", modifier = Modifier.homeSwitchGroup()) {
                 SettingsGroup(backdrop = backdrop, config = state.config, modifier = Modifier.fillMaxWidth()) {
                     SettingsNavigationRow(
-                        "通用设置",
+                        "主题设置",
                         leadingIcon = Icons.Rounded.Settings,
                         leadingIconTint = ComposeColor(0xFF0A84FF),
                         selected = selectedPage == SettingsPage.General,
                         onClick = { onPageChange(SettingsPage.General) }
                     )
                     SettingsNavigationRow(
-                        "小组件设置",
+                        "组件设置",
                         leadingIcon = Icons.Rounded.Widgets,
                         leadingIconTint = ComposeColor(0xFFFF9500),
                         selected = selectedPage == SettingsPage.Widgets,
                         onClick = { onPageChange(SettingsPage.Widgets) }
                     )
                     SettingsNavigationRow(
-                        "当前课表详细设置",
+                        "课表详细",
                         leadingIcon = Icons.Rounded.Tune,
                         leadingIconTint = ComposeColor(0xFF5856D6),
                         selected = selectedPage == SettingsPage.Schedule,
                         onClick = { onPageChange(SettingsPage.Schedule) }
                     )
                     SettingsNavigationRow(
-                        "自动刷新课表",
+                        "刷新课表",
                         leadingIcon = Icons.Rounded.Sync,
                         leadingIconTint = ComposeColor(0xFF34C759),
                         badgeText = "实验功能",
@@ -267,7 +267,7 @@ fun SettingsRootScreen(
             }
         }
         item {
-            GlassPreferenceSection("智能助手", modifier = Modifier.homeSwitchGroup()) {
+            GlassPreferenceSection("智能Ai", modifier = Modifier.homeSwitchGroup()) {
                 SettingsGroup(backdrop = backdrop, config = state.config, modifier = Modifier.fillMaxWidth()) {
                     SettingsNavigationRow(
                         "AI 设置",
@@ -287,7 +287,7 @@ fun SettingsRootScreen(
             }
         }
         item {
-            GlassPreferenceSection("其他", modifier = Modifier.homeSwitchGroup()) {
+            GlassPreferenceSection("备份", modifier = Modifier.homeSwitchGroup()) {
                 SettingsGroup(backdrop = backdrop, config = state.config, modifier = Modifier.fillMaxWidth()) {
                     SettingsNavigationRow(
                         "备份与恢复",
@@ -297,7 +297,7 @@ fun SettingsRootScreen(
                         onClick = { onPageChange(SettingsPage.BackupRestore) }
                     )
                     SettingsNavigationRow(
-                        "捐赠支持",
+                        "关于 Vv",
                         leadingIcon = Icons.Rounded.Favorite,
                         leadingIconTint = ComposeColor(0xFFFF2D55),
                         selected = selectedPage == SettingsPage.Donate,
